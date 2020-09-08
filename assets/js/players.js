@@ -8,10 +8,11 @@ $("#playerSearch").on("click", function(event){
         return console.log("Search is empty!")
     }
     console.log(playerName + " After if")
+    playerSearch(playerName)
 })
 
-function initialize(){
-    let URL = "https://www.balldontlie.io/api/v1/players"
+function playerSearch(playerName){
+    let URL = "https://www.balldontlie.io/api/v1/players?search="+playerName+"&per_page=100"
     console.log(URL)
     $.ajax({
         url: URL,
@@ -24,5 +25,3 @@ function initialize(){
         console.log(response);
     })
 }
-
-initialize();
