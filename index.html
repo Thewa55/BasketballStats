@@ -10,12 +10,20 @@
   crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Welcome to basketball stats</h1>
-    <form>
-        <input class="form-control" placeholder="James Harden, Anthony Davis..." id="playerInput"></input>
-        <button id="playerSearch">Search Player</button>
-    </form>
+  <h1>Welcome to basketball stats</h1>
+  <form>
+    <input class="form-control" placeholder="James Harden, Anthony Davis..." id="playerInput"></input>
+    <button id="playerSearch">Search Player</button>
+  </form>
 
-    <script src="assets/js/players.js"></script>
+  <div id="playerSection">
+    <div id="playerName"></div>
+    <table id="playerStats">
+      <tr>
+        <th>GP</th>
+      </tr>
+    </table>
+  </div>
+  <script src="assets/js/players.js"></script>
 </body>
 </html>
