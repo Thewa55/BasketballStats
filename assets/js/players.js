@@ -49,8 +49,23 @@ let displayData = (playerId) => {
             console.log("Can't fetch API");
             return;
         }}
-    }).then(function(response){
-        console.log(response);
+    }).then(function(res){
+        console.log(res.data[0]);
+        let stats = res.data[0];
+        let gamesPlayed = $("<td>").text(stats.games_played)
+        let fgm = $("<td>").text(stats.fgm)
+        let fga = $("<td>").text(stats.fga)
+        let fgp = $("<td>").text(stats.fg_pct)
+        let tpm = $("<td>").text(stats.fg3m)
+        let tpa = $("<td>").text(stats.fg3a)
+        let tpp = $("<td>").text(stats.fg3_pct)
+        $("#statsRow").append(gamesPlayed)
+        $("#statsRow").append(fgm)
+        $("#statsRow").append(fga)
+        $("#statsRow").append(fgp)
+        $("#statsRow").append(tpm)
+        $("#statsRow").append(tpa)
+        $("#statsRow").append(tpp)
     })
 }
 
