@@ -12,8 +12,17 @@
 <body>
   <h1>Welcome to basketball stats</h1>
   <form>
-    <input class="form-control" placeholder="James Harden, Anthony Davis..." id="playerInput"></input>
+    Stats for a single player
+    <br>
+    <input class="form-control" placeholder="James Harden, Anthony Davis..." id="playerInput">
     <button id="playerSearch">Search Player</button>
+  </form>
+  <form>
+    Comparing stats between two players
+    <br>
+    <input class="form-control" placeholder="James Harden, Anthony Davis..." id="playerOneInput">
+    <input class="form-control" placeholder="James Harden, Anthony Davis..." id="playerTwoInput">
+    <button id="comparePlayersSearch">Compare players</button>
   </form>
 
   <div id="playerSection">
@@ -29,6 +38,25 @@
         <th>3P%</th>
       </tr>
       <tr id="statsRow">
+      </tr>
+    </table>
+  </div>
+
+  <div id="comparePlayerSection">
+    <div id="compareplayerName"></div>
+    <table id="compareStats">
+      <tr>
+        <th>GP</th>
+        <th>FGM</th>
+        <th>FGA</th>
+        <th>FG%</th>
+        <th>3PM</th>
+        <th>3PA</th>
+        <th>3P%</th>
+      </tr>
+      <tr id="statsRow1">
+      </tr>
+      <tr id="statsRow2">
       </tr>
     </table>
   </div>
