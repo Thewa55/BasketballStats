@@ -26,6 +26,17 @@ let playerSearch = (playerName) => {
             return
         }}
     }).then(function(response){
+        console.log(response.data)
+        if(response.data.length > 1){
+            let activePlayer = [];
+            response.data.forEach(player => {
+                if(player.id < 500){
+                    activePlayer.push(player);
+                }
+            });
+            console.log(activePlayer);
+        }
+        
         if(response.data.length === 1){
             $("#playerSection").show();
             console.log(response.data)
