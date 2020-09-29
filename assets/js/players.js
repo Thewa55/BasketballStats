@@ -12,6 +12,8 @@ $("#playerSearch").on("click", function(event){
 
 let initialize = () => {
   $("#playerSection").hide();
+  $("#comparePlayerSection").hide();
+  $("#playerReturn").hide();
 }
 
 
@@ -35,17 +37,22 @@ let playerSearch = (playerName) => {
                 }
             });
             console.log(activePlayer);
+            multiplePlayer(activePlayer);
         }
         
         if(response.data.length === 1){
-            $("#playerSection").show();
-            console.log(response.data)
-            let playerData = response.data[0]
-            displayData(response.data[0].id)
-            let playerNameHeader = $("<h2>").text(playerData.first_name + " " + playerData.last_name);
-            let playerPosition = $("<p>").text(playerData.position + " | " + playerData.team.abbreviation)
-            $("#playerName").append(playerNameHeader);
-            $("#playerName").append(playerPosition);
+            if(response.data.id < 500){
+                $("#playerSection").show();
+                console.log(response.data)
+                let playerData = response.data[0]
+                displayData(response.data[0].id)
+                let playerNameHeader = $("<h2>").text(playerData.first_name + " " + playerData.last_name);
+                let playerPosition = $("<p>").text(playerData.position + " | " + playerData.team.abbreviation)
+                $("#playerName").append(playerNameHeader);
+                $("#playerName").append(playerPosition);
+            } else {
+                console.log("Not an active player")
+            }
         }
     })
 }
@@ -78,6 +85,10 @@ let displayData = (playerId) => {
         $("#statsRow").append(tpa)
         $("#statsRow").append(tpp)
     })
+}
+
+let multiplePlayer = (players) => {
+    $("#playerReturn").show();
 }
 
 initialize();
